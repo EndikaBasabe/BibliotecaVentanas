@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Controlador.SocioControlador;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -17,23 +20,7 @@ import javax.swing.JMenu;
 public class Principal extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Principal frame = new Principal();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
+	private SocioControlador socioControlador;
 	/**
 	 * Create the frame.
 	 */
@@ -83,4 +70,12 @@ public class Principal extends JFrame {
 		lblNewLabel.setBounds(249, 59, 145, 171);
 		contentPane.add(lblNewLabel);
 	}
+	
+	public SocioControlador getSocioControlador() {
+		return socioControlador;
+	}
+	public void setSocioControlador(SocioControlador socioControlador) {
+		this.socioControlador = socioControlador;
+	}
+	
 }

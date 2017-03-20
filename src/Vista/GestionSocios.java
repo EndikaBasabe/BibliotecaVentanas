@@ -5,32 +5,26 @@ import java.awt.FlowLayout;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Controlador.SocioControlador;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 
 public class GestionSocios extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			GestionSocios dialog = new GestionSocios();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+	private SocioControlador socioControlador;
 
 	/**
 	 * Create the dialog.
 	 */
-	public GestionSocios() {
+	public GestionSocios(JFrame parent,boolean modal) {
+		
+		super(parent,modal);
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -57,6 +51,14 @@ public class GestionSocios extends JDialog {
 			lblGestionDeSocios.setBounds(107, 21, 169, 14);
 			contentPanel.add(lblGestionDeSocios);
 		}
+	}
+
+	public SocioControlador getSocioControlador() {
+		return socioControlador;
+	}
+
+	public void setSocioControlador(SocioControlador socioControlador) {
+		this.socioControlador = socioControlador;
 	}
 
 }

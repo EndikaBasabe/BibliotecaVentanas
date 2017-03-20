@@ -7,6 +7,9 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Controlador.SocioControlador;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
@@ -20,23 +23,15 @@ public class FormularioSocio extends JDialog {
 	private JTextField textFieldProvincia;
 	private JTextField textFieldDNI;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		try {
-			FormularioSocio dialog = new FormularioSocio();
-			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-			dialog.setVisible(true);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+	private SocioControlador socioControlador;
 
 	/**
 	 * Create the dialog.
 	 */
-	public FormularioSocio() {
+	public FormularioSocio(JDialog parent,boolean modal) {
+		
+		super(parent,modal);
+		
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -102,4 +97,14 @@ public class FormularioSocio extends JDialog {
 		buttonGuardar.setBounds(257, 227, 89, 23);
 		contentPanel.add(buttonGuardar);
 	}
+
+	public SocioControlador getSocioControlador() {
+		return socioControlador;
+	}
+
+	public void setSocioControlador(SocioControlador socioControlador) {
+		this.socioControlador = socioControlador;
+	}
+	
+	
 }
