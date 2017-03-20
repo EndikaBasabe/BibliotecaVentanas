@@ -63,6 +63,11 @@ public class Principal extends JFrame {
 		contentPane.add(buttonGestionarLibros);
 		
 		JButton buttonGestionarSocios = new JButton("Gestionar socios");
+		buttonGestionarSocios.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			socioControlador.abrirGestionSocios();
+			}
+		});
 		buttonGestionarSocios.setBounds(81, 120, 132, 19);
 		contentPane.add(buttonGestionarSocios);
 		
@@ -71,6 +76,8 @@ public class Principal extends JFrame {
 		contentPane.add(lblNewLabel);
 	}
 	
+	
+
 	public SocioControlador getSocioControlador() {
 		return socioControlador;
 	}

@@ -12,6 +12,9 @@ import Controlador.SocioControlador;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class FormularioSocio extends JDialog {
 
@@ -94,8 +97,40 @@ public class FormularioSocio extends JDialog {
 		textFieldDNI.setColumns(10);
 		
 		JButton buttonGuardar = new JButton("Guardar");
-		buttonGuardar.setBounds(257, 227, 89, 23);
+		buttonGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				socioControlador.guardarSocio(textFieldNombre.getText(),textFieldApellido.getText(),textFieldDireccion.getText(),textFieldPoblacion.getText(),textFieldProvincia.getText(),textFieldDNI.getText());
+				socioControlador.cerrarFormularioSocio();
+				clear();
+			}
+		});
+		buttonGuardar.setBounds(235, 227, 89, 23);
 		contentPanel.add(buttonGuardar);
+		
+		JLabel lblFormularioDeSocios = new JLabel("FORMULARIO DE SOCIOS");
+		lblFormularioDeSocios.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblFormularioDeSocios.setBounds(140, 10, 206, 14);
+		contentPanel.add(lblFormularioDeSocios);
+		
+		JButton btnNewButton = new JButton("Cancelar");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				socioControlador.cerrarFormularioSocio();
+				clear();
+			}
+		});
+		btnNewButton.setBounds(334, 227, 89, 23);
+		contentPanel.add(btnNewButton);
+	}
+
+	protected void clear() {
+		// TODO Apéndice de método generado automáticamente
+		this.textFieldNombre.setText("");
+		this.textFieldApellido.setText("");
+		this.textFieldDireccion.setText("");
+		this.textFieldPoblacion.setText("");
+		this.textFieldProvincia.setText("");
+		this.textFieldDNI.setText("");
 	}
 
 	public SocioControlador getSocioControlador() {
@@ -105,6 +140,4 @@ public class FormularioSocio extends JDialog {
 	public void setSocioControlador(SocioControlador socioControlador) {
 		this.socioControlador = socioControlador;
 	}
-	
-	
 }

@@ -35,6 +35,7 @@ public class Main {
 		socioControlador.setSocioModelo(socioModelo);
 		
 		principal.setVisible(true);
+		
 	}
 
 }

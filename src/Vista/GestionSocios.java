@@ -13,6 +13,8 @@ import Controlador.SocioControlador;
 
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GestionSocios extends JDialog {
 
@@ -32,6 +34,11 @@ public class GestionSocios extends JDialog {
 		contentPanel.setLayout(null);
 		{
 			JButton buttonAnadirSocio = new JButton("A\u00F1adir socio");
+			buttonAnadirSocio.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					socioControlador.abrirFormularioSocio();
+				}
+			});
 			buttonAnadirSocio.setBounds(140, 61, 106, 23);
 			contentPanel.add(buttonAnadirSocio);
 		}
