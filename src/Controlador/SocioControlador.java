@@ -1,5 +1,6 @@
 package Controlador;
 
+import Vista.BorrarSocio;
 import Vista.FormularioSocio;
 import Vista.GestionSocios;
 import Vista.Principal;
@@ -12,7 +13,8 @@ public class SocioControlador {
 	private GestionSocios gestionSocios;
 	private FormularioSocio formularioSocio;
 	private Socio_modelo socioModelo;
-
+	private BorrarSocio borrarSocio;
+	
 	public Principal getPrincipal() {
 		return principal;
 	}
@@ -44,6 +46,14 @@ public class SocioControlador {
 	public void setSocioModelo(Socio_modelo socioModelo) {
 		this.socioModelo = socioModelo;
 	}
+	
+	public BorrarSocio getBorrarSocio() {
+		return borrarSocio;
+	}
+
+	public void setBorrarSocio(BorrarSocio borrarSocio) {
+		this.borrarSocio = borrarSocio;
+	}
 
 	public void abrirGestionSocios() {
 		this.gestionSocios.setVisible(true);
@@ -72,6 +82,14 @@ public class SocioControlador {
 		socio.setDni(dni);
 		
 		this.socioModelo.insert(socio);
+		
+	}
+
+	public void abrirBorrarSocio() {
+		//Comboa bete //modelo -- > select.  return arrayList socios.  formdeborrado.rellenarCombo(socio)
+		
+		//Abrir ventana.
+		this.borrarSocio.setVisible(true);
 		
 	}
 

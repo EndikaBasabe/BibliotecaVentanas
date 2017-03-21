@@ -14,6 +14,9 @@ public class Libro {
 		this.num_pag = num_pag;
 	}
 	
+	public Libro(){
+		
+	}
 	public void mostrarInfo(){
 		System.out.println("id: "+ this.id
 				+ " titulo: " + this.titulo

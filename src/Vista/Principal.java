@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Controlador.LibroControlador;
 import Controlador.SocioControlador;
 
 import javax.swing.JLabel;
@@ -21,6 +22,7 @@ public class Principal extends JFrame {
 
 	private JPanel contentPane;
 	private SocioControlador socioControlador;
+	private LibroControlador libroControlador;
 	/**
 	 * Create the frame.
 	 */
@@ -57,9 +59,10 @@ public class Principal extends JFrame {
 		JButton buttonGestionarLibros = new JButton("Gestionar libros");
 		buttonGestionarLibros.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				libroControlador.abrirGestionLibros();
 			}
 		});
-		buttonGestionarLibros.setBounds(81, 79, 132, 19);
+		buttonGestionarLibros.setBounds(81, 77, 132, 19);
 		contentPane.add(buttonGestionarLibros);
 		
 		JButton buttonGestionarSocios = new JButton("Gestionar socios");
@@ -70,10 +73,6 @@ public class Principal extends JFrame {
 		});
 		buttonGestionarSocios.setBounds(81, 120, 132, 19);
 		contentPane.add(buttonGestionarSocios);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(249, 59, 145, 171);
-		contentPane.add(lblNewLabel);
 	}
 	
 	
@@ -83,6 +82,18 @@ public class Principal extends JFrame {
 	}
 	public void setSocioControlador(SocioControlador socioControlador) {
 		this.socioControlador = socioControlador;
+	}
+
+
+
+	public LibroControlador getLibroControlador() {
+		return libroControlador;
+	}
+
+
+
+	public void setLibroControlador(LibroControlador libroControlador) {
+		this.libroControlador = libroControlador;
 	}
 	
 }

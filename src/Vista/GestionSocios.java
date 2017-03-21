@@ -44,6 +44,11 @@ public class GestionSocios extends JDialog {
 		}
 		{
 			JButton buttonBorrarSocio = new JButton("Borrar socio");
+			buttonBorrarSocio.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					socioControlador.abrirBorrarSocio();
+				}
+			});
 			buttonBorrarSocio.setBounds(140, 108, 106, 23);
 			contentPanel.add(buttonBorrarSocio);
 		}
