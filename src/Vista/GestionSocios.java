@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
 
 public class GestionSocios extends JDialog {
 
@@ -39,7 +40,7 @@ public class GestionSocios extends JDialog {
 					socioControlador.abrirFormularioSocio();
 				}
 			});
-			buttonAnadirSocio.setBounds(140, 61, 106, 23);
+			buttonAnadirSocio.setBounds(140, 61, 123, 23);
 			contentPanel.add(buttonAnadirSocio);
 		}
 		{
@@ -49,12 +50,19 @@ public class GestionSocios extends JDialog {
 					socioControlador.abrirBorrarSocio();
 				}
 			});
-			buttonBorrarSocio.setBounds(140, 108, 106, 23);
+			buttonBorrarSocio.setBounds(140, 108, 123, 23);
 			contentPanel.add(buttonBorrarSocio);
 		}
 		{
-			JButton buttonCambiarSocio = new JButton("Cambiar socio");
-			buttonCambiarSocio.setBounds(140, 155, 106, 23);
+			JButton buttonCambiarSocio = new JButton("Busqueda socios");
+			buttonCambiarSocio.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent arg0) {
+					
+					socioControlador.abrirBusquedaSocios();
+					
+				}
+			});
+			buttonCambiarSocio.setBounds(140, 155, 123, 23);
 			contentPanel.add(buttonCambiarSocio);
 		}
 		{
@@ -72,5 +80,4 @@ public class GestionSocios extends JDialog {
 	public void setSocioControlador(SocioControlador socioControlador) {
 		this.socioControlador = socioControlador;
 	}
-
 }
